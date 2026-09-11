@@ -1,0 +1,310 @@
+:root {
+    --gold: #E4BC3F;
+    --muted: #9A8C6A;
+    --text: #e0d8c3;
+    --dark: #090403;
+    --door: #160b07;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 42%, #251409 0%, #080403 52%, #020101 100%);
+    color: var(--text);
+    font-family: "Cormorant Garamond", serif;
+}
+
+.doors {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px 25px;
+    perspective: 1800px;
+    overflow: hidden;
+}
+.doors h1 {
+    position: relative;
+    z-index: 3;
+    margin-bottom: 12px;
+    color: var(--gold);
+    font-family: "Cinzel Decorative", serif;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(228, 188, 63, .18);
+}
+.door-frame {
+    position: relative;
+    z-index: 2;
+    height: 90vh;
+    width: min(650px, 78vw);
+    aspect-ratio: .78;
+    padding: 18px;
+    background: linear-gradient(135deg, #72521c, #130b06 25%, #3b2810 52%, #100804 78%, #76541b);
+    border: 2px solid #876322;
+    box-shadow: 0 0 0 5px #0b0503, 0 0 0 7px #4b3514, 0 35px 80px #000;
+    transform-style: preserve-3d;
+}
+.top-star {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: var(--gold);
+    font-size: 2rem;
+    text-shadow: 0 0 18px rgba(228, 188, 63, .6);
+}
+
+.door-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    background: #050302;
+    border: 1px solid #3f2c12;
+    transform-style: preserve-3d;
+    perspective: 1600px;
+}
+
+.door-reveal {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, rgba(228, 188, 63, .15), transparent 40%), linear-gradient(135deg, #080403, #1a0d08 50%, #030201);
+    box-shadow: inset 0 0 90px #000;
+}
+
+.door-reveal:before {
+    content: "";
+    position: absolute;
+    top: 22%;
+    color: rgba(228, 188, 63, .18);
+    font-size: 5rem;
+}
+
+.reveal {
+    position: relative;
+    z-index: 2;
+    padding: 15px 26px;
+    border: 1px solid rgba(228, 188, 63, .55);
+    color: var(--gold);
+    text-decoration: none;
+    font-family: "Cinzel Decorative", serif;
+    letter-spacing: 2px;
+    background: rgba(10, 5, 3, .75);
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity .8s ease 1.05s, transform .8s ease 1.05s, background .3s;
+}
+
+.reveal:hover {
+    background: rgba(228, 188, 63, .08);
+}
+
+.door {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 5;
+    background: linear-gradient(90deg, rgba(0, 0, 0, .7), transparent 22%, rgba(255, 255, 255, .025) 50%, rgba(0, 0, 0, .55)), linear-gradient(135deg, #321c10, #100806 72%);
+    border: 1px solid #76531d;
+    transform-style: preserve-3d;
+    transition: transform 1.8s cubic-bezier(.77, 0, .175, 1);
+    box-shadow: inset 0 0 35px rgba(0, 0, 0, .8);
+}
+
+.door:before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(154, 140, 106, .35);
+}
+
+.left-door {
+    left: 0;
+    transform-origin: left center;
+}
+
+.right-door {
+    right: 0;
+    transform-origin: right center;
+}
+
+.panel-container {
+    position: absolute;
+    inset: 7% 16%;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.panel {
+    position: relative;
+    border: 1px solid rgba(154, 140, 106, .45);
+    background: linear-gradient(135deg, rgba(255, 255, 255, .025), transparent 35%), linear-gradient(315deg, #0a0503, #25140b);
+    box-shadow: inset 0 0 18px #000;
+}
+
+.panel:before {
+    content: "✦";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(228, 188, 63, .12);
+}
+
+.stud-column {
+    position: absolute;
+    top: 8%;
+    bottom: 8%;
+    width: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-door .stud-column {
+    left: 4%;
+}
+
+.right-door .stud-column {
+    right: 4%;
+}
+
+.stud {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #f0d56a, #704f17 60%, #241707);
+    box-shadow: 0 0 8px rgba(228, 188, 63, .25);
+}
+
+.handle-container {
+    position: absolute;
+    top: 50%;
+    width: 42px;
+    height: 90px;
+    transform: translateY(-50%);
+}
+
+.left-door .handle-container {
+    right: 5%;
+}
+
+.right-door .handle-container {
+    left: 5%;
+}
+
+.door-knob {
+    position: absolute;
+    top: 50%;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    background: radial-gradient(circle at 35% 30%, #f1d66f, #8a641d 58%, #332008);
+    box-shadow: 0 0 10px rgba(228, 188, 63, .25);
+}
+
+.left-door .door-knob {
+    right: 0;
+}
+
+.right-door .door-knob {
+    left: 0;
+}
+
+.handle-bar {
+    position: absolute;
+    top: 50%;
+    width: 35px;
+    height: 6px;
+    transform: translateY(-50%);
+    border-radius: 5px;
+    background: linear-gradient(#e1c35c, #654716 55%, #b28b2c);
+    box-shadow: 0 2px 5px #000;
+}
+
+.left-door .handle-bar {
+    right: 6px;
+}
+
+.right-door .handle-bar {
+    left: 6px;
+}
+
+.enter {
+    position: relative;
+    z-index: 4;
+    margin-top: 18px;
+    color: var(--gold);
+    text-decoration: none;
+    font-family: "Cinzel Decorative", serif;
+    font-size: .9rem;
+    letter-spacing: 2px;
+    transition: .3s;
+}
+
+.enter:hover {
+    color: #fff0ad;
+    transform: translateY(-2px);
+}
+
+.door-inner:hover .left-door {
+    transform: rotateY(-105deg);
+}
+
+.door-inner:hover .right-door {
+    transform: rotateY(105deg);
+}
+
+.door-inner:hover .reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.door-inner:hover .enter {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes float-right {
+
+    0%,
+    100% {
+        transform: scaleX(-1) translateY(0);
+    }
+
+    50% {
+        transform: scaleX(-1) translateY(-7px);
+    }
+}

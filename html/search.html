@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/library.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <title>Search- Arcane Library</title>
+</head>
+<body>
+    <header class="library-nav">
+        <div class="nav-logo"><a href="index.html">ARCANE LIBRARY</a></div>
+        <nav class="nav-center">
+            <a href="index.html">HOME</a>
+            <a href="library.html">LIBRARY</a>
+            <a href="collections.html">COLLECTIONS</a>
+            <a href="genres.html">GENRES</a>
+            <a href="authors.html">AUTHORS</a>
+            <a href="about.html">ABOUT</a>
+            <a href="search.html" class="active">SEARCH</a>
+        </nav>
+    </header>
+
+    <main class="page-main search-page">
+        <div class="page-intro">
+            <h1 class="main-title">SEARCH THE LIBRARY</h1>
+            <p class="main-subtitle">"Every story leaves a trace. Search by title, author, genre, or collection."</p>
+        </div>
+        <div class="search-container">
+            <div class="search-box-wrapper">
+                <span class="search-rune">✦</span>
+                <input type="text" placeholder="Search the library..." class="main-search-input">
+                <div class="search-border"></div>
+                <button class="search-gold-btn">SEARCH</button>
+            </div>
+            <div class="ornament-small">✦ SEARCH LIBRARY ✦</div>
+            <div class="search-by-section">
+                <h3>SEARCH BY</h3>
+                <div class="category-grid">
+                    <a href="#search-title" class="cat-card">TITLE</a>
+                    <a href="#search-author" class="cat-card">AUTHOR</a>
+                    <a href="#search-genre" class="cat-card">GENRE</a>
+                    <a href="#search-collection" class="cat-card">COLLECTION</a>
+                </div>
+            </div>
+            <div class="popular-searches">
+                <span class="popular-label">POPULAR:</span>
+                <div class="tag-list">
+                    <span class="search-tag">FANTASY</span>
+                    <span class="search-tag">THRILLER</span>
+                    <span class="search-tag">ROMANCE</span>
+                    <span class="search-tag">BRANDON SANDERSON</span>
+                    <span class="search-tag">MARIE LU</span>
+                </div>
+            </div>
+        </div>
+        <div id="search-title" class="search-overlay">
+            <div class="search-panel">
+                <a href="#" class="close-panel">CLOSE</a>
+                <h2>SEARCH BY TITLE</h2>
+                <p>Enter the name of a book to find it in the library.</p>
+                <div class="panel-input-group">
+                    <input type="text" placeholder="Enter book title...">
+                    <button class="search-gold-btn">SEARCH</button>
+                </div>
+            </div>
+        </div>
+        <div id="search-author" class="search-overlay">
+            <div class="search-panel">
+                <a href="#" class="close-panel">CLOSE</a>
+                <h2>SEARCH BY AUTHOR</h2>
+                <p>Search the library by the writer behind the story.</p>
+                <div class="panel-input-group">
+                    <input type="text" placeholder="Enter author name...">
+                    <button class="search-gold-btn">SEARCH</button>
+                </div>
+            </div>
+        </div>
+        <div id="search-genre" class="search-overlay">
+            <div class="search-panel">
+                <a href="#" class="close-panel">CLOSE</a>
+                <h2>SEARCH BY GENRE</h2>
+                <p>Browse stories by the worlds and themes they belong to.</p>
+                <div class="panel-input-group">
+                    <input type="text" placeholder="Enter genre...">
+                    <button class="search-gold-btn">SEARCH</button>
+                </div>
+            </div>
+        </div>
+        <div id="search-collection" class="search-overlay">
+            <div class="search-panel">
+                <a href="#" class="close-panel">CLOSE</a>
+                <h2>SEARCH BY COLLECTION</h2>
+                <p>Find books gathered into one of the library's curated collections.</p>
+                <div class="panel-input-group">
+                    <input type="text" placeholder="Enter collection name...">
+                    <button class="search-gold-btn">SEARCH</button>
+                </div>
+            </div>
+        </div>
+         <div class="chat-character">
+            <a href="#library-chat">
+                <img src="../images/Librarian.png" alt="✦" class="chat-icon">
+            </a>
+        </div>
+        <div id="library-chat" class="chat-box">
+            <div class="chat-header">
+                <img src="../images/Librarian.png" alt="✦" class="chat-icon">
+                <span>The Librarian</span>
+                <a href="search.html" class="chat-close">x</a>
+            </div>
+            <div class="chat-message">
+                <p>Welcome, Reader!</p>
+                <p>What would you like to explore?</p>
+            </div>
+            <div class="chat-options">
+                <a href="library.html">Browse the Books</a>
+                <a href="collections.html">Explore Categories</a>
+                <a href="genres.html">View Genres</a>
+                <a href="about.html">About the Library</a>
+                <textarea name="textbox" id="textbox" placeholder="Ask a Question"></textarea>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

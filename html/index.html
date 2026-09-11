@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>Arcane Library</title>
+</head>
+
+<body>
+    <a href="#side-menu" class="hamburger">&#9776;</a>
+    <nav id="side-menu" class="navpanel">
+        <ul class="navlist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="library.html">Browse Books</a></li>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="authors.html">Authors</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li class="close"><a href="index.html">Close</a></li>
+        </ul>
+    </nav>
+
+    <main class="doors">
+        <h1>Arcane Library</h1>
+        <p>Every book hides another world.</p>
+        <div class="book-portal">
+            <input type="checkbox" id="book-control" class="book-checkbox">
+            <div class="book-perspective">
+                <div class="book-object">
+                    <div class="book-pages">
+                        <div class="pages-content">
+                            <h2>Arcane Library</h2>
+                            <p>"Every book hides another world."</p>
+                            <a href="library.html" class="library-enter-btn">✦ Enter the Library ✦</a>
+                        </div>
+                    </div>
+                    <label for="book-control" class="book-cover">
+                        <div class="cover-front">
+                            <div class="cover-border">
+                                <div class="cover-title">
+                                    <span class="title-top">ARCANE</span>
+                                    <span class="title-bottom">LIBRARY</span>
+                                </div>
+                                <div class="cover-ornament">✦</div>
+                                <div class="open-prompt">Click to Open</div>
+                            </div>
+                        </div>
+                        <div class="cover-back"></div>
+                    </label>
+
+                </div>
+            </div>
+        </div>
+        <div class="chat-character">
+            <a href="#library-chat">
+                <img src="../images/Librarian.png" alt="✦" class="chat-icon">
+            </a>
+        </div>
+        <div id="library-chat" class="chat-box">
+            <div class="chat-header">
+                <img src="../images/Librarian.png" alt="✦" class="chat-icon">
+                <span>The Librarian</span>
+                <a href="index.html" class="chat-close">x</a>
+            </div>
+            <div class="chat-message">
+                <p>Welcome, Reader!</p>
+                <p>What would you like to explore?</p>
+            </div>
+            <div class="chat-options">
+                <a href="library.html">Browse the Books</a>
+                <a href="collections.html">Explore Categories</a>
+                <a href="genres.html">View Genres</a>
+                <a href="about.html">About the Library</a>
+                <textarea name="textbox" id="textbox" placeholder="Ask a Question"></textarea>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
